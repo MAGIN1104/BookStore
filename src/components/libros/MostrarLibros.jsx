@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import  {compose} from 'redux';
 import {connect} from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -6,8 +6,21 @@ import {Link} from 'react-router-dom';
 import Spinner from '../layout/Spinner';
 import {PropTypes} from 'prop-types';
 
-const MostrarLibros = ({libro})=>{
+class MostrarLibros extends Component{
+
+    render(){
+    const {libro} =this.props;
     if(!libro) return <Spinner/>
+ 
+    let btnPrestamo;
+    if(libro.existencia - libro.prestados.length >0){
+        btnPrestamo = <Link
+                        to={`/libros/prestamo/${libro.id}`}
+                        className="btn btn-success my-3"
+                      >Solicitar Libro</Link>
+    }else{
+        btnPrestamo=null;
+    }
 
     return(
             <div className="row">
@@ -48,9 +61,11 @@ const MostrarLibros = ({libro})=>{
                         </span> &nbsp; &nbsp; &nbsp;
                         {libro.existencia}
                     </p>
+                {btnPrestamo}
                 </div>
             </div>       
         );
+}
 }
 
 MostrarLibros.propTypes = {

@@ -29,12 +29,12 @@ function App() {
                 <Route exact path="/suscriptores/nuevo" component={(NuevoSuscriptor)} />
                 <Route exact path="/suscriptores/mostrar/:id" component={(MostrarSuscriptor)} />
                 <Route exact path="/suscriptores/editar/:id" component={(EditarSuscriptor)} />
-
+                
                 <Route exact path="/" component={(Libros)}/>
                 <Route exact path="/libros/nuevolibro" component={(NuevoLibro)}/>
                 <Route exact path="/libros/editarlibro/:id" component={(EditarLibro)}/>
                 <Route exact path="/libros/mostrarlibro/:id" component={(MostrarLibro)}/>
-                <Route exact path="/libros/prestamoslibro/:id" component={(PrestamoLibro)}/>
+                <Route exact path="/libros/prestamo/:id" component={(PrestamoLibro)}/>
             </Switch>
           </div>
       </Router>
