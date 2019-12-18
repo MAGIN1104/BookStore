@@ -54,7 +54,7 @@ const Libros = ({libros})=>{
                                     to={`/suscriptores/mostrar/${libros.id}`}
                                     className="btn btn-success"
                                 >
-                                    <i className="fas fa-angle-double-right"></i> {' '}
+                                    <i className="fas fa-plus"></i> {' '}
                                     Detalle
                                 </Link>
 
