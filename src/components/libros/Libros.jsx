@@ -5,9 +5,17 @@ import { firestoreConnect } from 'react-redux-firebase';
 import {Link} from 'react-router-dom';
 import Spinner from '../layout/Spinner';
 import {PropTypes} from 'prop-types';
-const Libros = ({libros})=>{
+const Libros = ({libros,firestore})=>{
 
     if(!libros) return <Spinner/>
+        //eliminar libros
+
+        const eliminarLibro = id=>{
+            firestore.delete({
+                collection: 'libros',
+                doc:    id
+            })
+        }
 
     return ( 
         <div className="row">
@@ -51,7 +59,7 @@ const Libros = ({libros})=>{
 
                         <td className="text-center">  
                                 <Link
-                                    to={`/suscriptores/mostrar/${libros.id}`}
+                                    to={`/libros/mostrarlibro/${libro.id}`}
                                     className="btn btn-success"
                                 >
                                     <i className="fas fa-plus"></i> {' '}
@@ -61,6 +69,7 @@ const Libros = ({libros})=>{
                                 <button
                                     type="button"
                                     className="btn btn-danger"
+                                    onClick={()=>eliminarLibro(libro.id)}
                                 >
                                     <i className="fas fa-trash-alt" ></i> {''}
                                     Borrar

@@ -32,7 +32,7 @@ function App() {
 
                 <Route exact path="/" component={(Libros)}/>
                 <Route exact path="/libros/nuevolibro" component={(NuevoLibro)}/>
-                <Route exact path="/libros/editalLibro/:id" component={(EditarLibro)}/>
+                <Route exact path="/libros/editarlibro/:id" component={(EditarLibro)}/>
                 <Route exact path="/libros/mostrarlibro/:id" component={(MostrarLibro)}/>
                 <Route exact path="/libros/prestamoslibro/:id" component={(PrestamoLibro)}/>
             </Switch>
