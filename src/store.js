@@ -6,12 +6,7 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBsdt4QSbTWQSb5C93v5Flhz--xNT8P5kQ",
-    authDomain: "bibliostore-b0ffc.firebaseapp.com",
-    databaseURL: "https://bibliostore-b0ffc.firebaseio.com",
-    projectId: "bibliostore-b0ffc",
-    storageBucket: "bibliostore-b0ffc.appspot.com",
-    messagingSenderId: "634899665756",
+
 }
 
 firebase.initializeApp(firebaseConfig);
